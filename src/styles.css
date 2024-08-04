@@ -110,6 +110,7 @@ h1 {
 .section2-textstyle2 {
     text-indent: 60px;
     font-size: 23px;
+    text-align: justify;
 }
 .section3{
     display: flex;
