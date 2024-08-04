@@ -94,8 +94,7 @@ h1 {
 }
 .section2-information {
     width: 50%;
-    height: 650px;
-    object-fit: cover; //Ensures the image covers the area without distortion */
+    
     margin-top: 30px;
     margin-left: 100px;
     margin-right: 60px;
