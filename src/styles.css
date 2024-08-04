@@ -101,6 +101,7 @@ h1 {
 .section2-container-img {
     width: 100%;
     height: 500px;
+    object-fit: cover;
 }
 .section2-textstyle1 {
     margin-top: 50;
@@ -108,7 +109,7 @@ h1 {
 }
 .section2-textstyle2 {
     text-indent: 60px;
-    font-size: 25px;
+    font-size: 23px;
 }
 .section3{
     display: flex;
