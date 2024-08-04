@@ -160,10 +160,8 @@ footer {
 }
 
 /* Let'smake it responsive */
-@media only screen and (max-width: 1000px) {
-    .subsection3{
-        display: flex;
-        flex-wrap: wrap;
-    }
+@media (max-width: 600px) {
+    /* Styles for mobile devices */
+}
 
 }
