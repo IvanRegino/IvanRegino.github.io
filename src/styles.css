@@ -93,7 +93,7 @@ h1 {
     background-color: white;
 }
 .section2-information {
-    width: 100%;
+    width: 50%;
     height: 650px;
     object-fit: cover; //Ensures the image covers the area without distortion */
     margin-top: 30px;
