@@ -146,7 +146,9 @@ h1 {
     font-size: 20px;
 }
 .section3-icos {  
-    width: 40%;
+    width: 150px; /* Set your desired width */
+    height: 150px; /* Set your desired height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 footer {
     background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
