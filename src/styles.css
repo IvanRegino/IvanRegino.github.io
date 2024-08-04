@@ -100,8 +100,8 @@ h1 {
 }
 .section2-container-img {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
+    height: 550px;
+    object-fit: cover; //Ensures the image covers the area without distortion */
 }
 .section2-textstyle1 {
     margin-top: 50;
