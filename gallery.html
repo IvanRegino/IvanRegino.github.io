@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Image Gallery</title>
-    <style>
-        /* Basic styling for the gallery */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .gallery img {
-            width: 100px;
-            height: 100px;
-            margin: 5px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
-    <div class="gallery">
-        <a href="techSupport.png" target="_blank">
-            <img src="img_1.jpg" alt="Image 1">
-        </a>
-        <!-- Add more images here -->
+  <div class="album">
+  <div class="responsive-container-block bg">
+    <div class="responsive-container-block img-cont">
+      <img class="img" src="IvanCapitol.JPG">
+      <img class="img" src="felipe.jpg">
+      <img class="img img-last" src="IvanCapitol.JPG">
     </div>
+    <div class="responsive-container-block img-cont">
+      <img class="img img-big" src="felipe.jpg">
+      <img class="img img-big img-last" src="felipe.jpg">
+    </div>
+    <div class="responsive-container-block img-cont">
+      <img class="img" src="felipe.jpg">
+      <img class="img" src="felipe.jpg">
+      <img class="img" src="felipe.jpg">
+    </div>
+  </div>
+</div>
 </body>
 </html>
