@@ -159,10 +159,8 @@ footer {
     padding: 80px;
 }
 
-/* Let'smake it responsive */
-@media (max-width: 600px) {
-    /* Styles for mobile devices */
-}
+ ///***///************
+
 
 body {
   display: flex;
@@ -209,6 +207,10 @@ h1 {
     }
   }
 }
+
+
+
+
 
 
 
