@@ -39,11 +39,12 @@ h1 {
       transition: all .25s ease-in-out;
     }
     p {
+      color: white;
       margin: 5px 0;
       padding: 0;
       text-align: center;
       font-style: italic;
-      color: white;
+      
     }
   }
 }
