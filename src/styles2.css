@@ -4,9 +4,11 @@ body {
   align-items: center;
   flex-direction: column;
   font-family: sans-serif;
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 }
 h1 {
-  color: coral;
+    font-size: 90px;
+    margin: 0;
 }
 .grid-container {
   columns: 4 200px;
