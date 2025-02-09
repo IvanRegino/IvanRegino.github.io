@@ -13,7 +13,7 @@ p {
     height: 80vh;
     color: white;
     font-size: 40px;
-   background-image: linear-gradient(to right, #1c3a70, #3a6cf4, #1c3a70);
+    background-image: linear-gradient(to right, #1c3a70, #3a6cf4, #1c3a70);
 }
 .avatar {
     height: 80px;
@@ -60,14 +60,14 @@ h1 {
     height: 60px;
     border-radius: 30px;
     text-align: center;
-    background-color:  #a4c9f4;
+    background-color: #3a6cf4;
     margin-top: 20px;
     font-size: 30px;
     font-weight: 300;
     
 }
 .button:hover {
-    background: #3a6cf4;
+    background: #a4c9f4; 
 }
 .button:active{
     color:black;
@@ -151,7 +151,7 @@ h1 {
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 footer {
-    background-image: linear-gradient(to right, #3a6cf4, #a4c9f4, #3a6cf4);
+    background-image: linear-gradient(to right, #1c3a70, #3a6cf4, #1c3a70);
     color: white;
     font-family: 'Roboto Mono', monospace;
     font-size: 40px;
