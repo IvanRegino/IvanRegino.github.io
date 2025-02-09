@@ -21,9 +21,12 @@ p {
     border-radius: 50%;
 }
 .menu-style{
+    display: inline-block;
     margin-right: 30px;
     text-decoration: none;
     color: white;
+    text-align: left;  /* Aligns the menu to the left */
+    white-space: nowrap;  /* Prevents text from wrapping */
 }
 .hero-text {
     margin-left: 100px;
