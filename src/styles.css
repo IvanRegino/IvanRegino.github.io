@@ -21,7 +21,14 @@ p {
     border-radius: 50%;
 }
 .menu-style{
-    display: inline-block;
+    display: flex;
+    justify-content: flex-end; /* Aligns the menu to the right */
+    align-items: center; /* Vertically centers the menu items */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px; /* Adjust as needed for spacing */
     margin-right: 30px;
     text-decoration: none;
     color: white;
