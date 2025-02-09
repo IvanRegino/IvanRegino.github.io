@@ -39,9 +39,10 @@ p {
     text-decoration: underline; /* Optional: Adds underline on hover */
 }
 .hero-text {
-    /* margin-left: 100px; */
+    margin-left: 100px; 
 }
 .hero-area {
+    padding-top: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
