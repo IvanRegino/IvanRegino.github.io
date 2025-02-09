@@ -22,8 +22,7 @@ p {
 }
 .menu-style{
     display: flex;
-    justify-content: flex-end; /* Aligns the menu to the right */
-    align-items: center; /* Vertically centers the menu items */
+    
     position: absolute;
     top: 0;
     right: 0;
