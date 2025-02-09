@@ -25,8 +25,7 @@ p {
     margin-right: 30px;
     text-decoration: none;
     color: white;
-    text-align: left;  /* Aligns the menu to the left */
-    white-space: nowrap;  /* Prevents text from wrapping */
+    text-align: right;  /* Aligns the menu to the left */
 }
 .hero-text {
     margin-left: 100px;
