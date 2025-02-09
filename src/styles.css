@@ -48,7 +48,7 @@ nav {
     right: 0;
     width: 100%;
     padding: 10px; /* Optional: Adjust the padding as needed */
-    background-color: #333; /* Optional: Set a background color for the nav bar */
+    background-color: white; /* Optional: Set a background color for the nav bar */
     }
 ul {
     display: flex;
