@@ -51,10 +51,12 @@ p {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    flex-direction: row;
     }
 ul {
     display: flex;
+    flex-direction: row;
     list-style-type: none;
     width: 500px;
     justify-content: space-around;
