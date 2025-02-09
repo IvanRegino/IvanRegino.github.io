@@ -13,7 +13,7 @@ p {
     height: 80vh;
     color: white;
     font-size: 40px;
-    background-image: linear-gradient(to right, #87CEEB, #4682B4, #1E90FF);
+    background-image: linear-gradient(to right, #ADD8E6, #00BFFF, #1E90FF);
 }
 .avatar {
     height: 80px;
