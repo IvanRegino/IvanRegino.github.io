@@ -22,7 +22,7 @@ p {
 }
 .menu-style{
     display: flex;
-    justify-content: flex-end;
+    justify-content: right;
     margin-right: 30px;
     text-decoration: none;
     color: white;
