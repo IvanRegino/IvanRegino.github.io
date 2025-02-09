@@ -32,7 +32,7 @@ p {
     margin-left: 30px;
     text-decoration: none;
     color: white;
-    padding: 10px 15px; /* Optional: Adds padding to the clickable area */
+    padding: 10px 15px;
 }
 
 .menu-style:hover {
@@ -57,7 +57,6 @@ ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    width: 500px;
     justify-content: space-around;
     font-size: 30px;
 }
