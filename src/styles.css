@@ -151,7 +151,7 @@ h1 {
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 footer {
-    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    background-image: linear-gradient(to right, #3a6cf4, #a4c9f4);
     color: white;
     font-family: 'Roboto Mono', monospace;
     font-size: 40px;
