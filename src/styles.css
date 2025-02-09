@@ -10,7 +10,7 @@ p {
     margin: 0;
 }
 .section1 {
-    /* height: 80vh; */
+    height: 80vh;
     color: white;
     font-size: 40px;
     background-image: linear-gradient(to right, #1c3a70, #3a6cf4, #1c3a70);
