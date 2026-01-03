@@ -176,8 +176,151 @@ footer {
 
 
 
+/* Wrapper so styles don't bleed into the rest of the site */
+.habit-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 24px 28px;
+  background: #ffffff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Header */
+.habit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+}
+
+.habit-header-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.habit-header-month {
+  font-size: 13px;
+}
+
+.habit-header-month label {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.habit-header-month input {
+  border: none;
+  border-bottom: 1px solid #333;
+  padding: 2px 4px;
+  font-size: 13px;
+  min-width: 150px;
+}
+
+/* Layout: habits left, grid right */
+.habit-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  column-gap: 24px;
+  align-items: flex-start;
+}
+
+/* Habit list */
+.habit-left {
+  font-size: 13px;
+}
+
+.habit-list-title {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 6px;
+}
+
+.habit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.habit-list input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 4px 2px;
+  font-size: 13px;
+}
+
+/* Grid */
+.habit-grid-wrapper {
+  overflow-x: auto;
+}
+
+.habit-grid {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 10px;
+}
+
+.habit-grid th,
+.habit-grid td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 3px;
+}
+
+.habit-grid thead th {
+  font-weight: 600;
+  background: #f3f3f3;
+}
+
+.habit-day-label {
+  width: 22px;
+}
+
+.habit-corner {
+  width: 30px;
+  background: #ffffff;
+}
+
+.habit-row-label {
+  font-weight: 400;
+  background: #fafafa;
+  width: 26px;
+}
+
+/* Cells with faint circles inside (to mimic the printable style) */
+.habit-grid td {
+  height: 18px;
+  position: relative;
+}
+
+.habit-grid td::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  transform: translate(-50%, -50%);
+}
+
+/* Basic responsiveness */
+@media (max-width: 800px) {
+  .habit-layout {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+}
+
+
 
 }
+
 
 
 
