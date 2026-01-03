@@ -1,34 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="src/styles2.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Image Gallery</title>
+  <meta charset="UTF-8" />
+  <title>Circular Habit Tracker</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .tracker-wrapper {
+      text-align: center;
+    }
+
+    .tracker-title {
+      margin-bottom: 16px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .habit-tracker {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 0 0 1px #ccc;
+    }
+
+    /* concentric rings */
+
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ring.r1 { width: 420px; height: 420px; }
+    .ring.r2 { width: 360px; height: 360px; }
+    .ring.r3 { width: 300px; height: 300px; }
+    .ring.r4 { width: 240px; height: 240px; }
+    .ring.r5 { width: 180px; height: 180px; }
+    .ring.r6 { width: 120px; height: 120px; }
+
+    /* center text (month / notes) */
+
+    .center-content {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .center-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .center-subtitle {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    /* day labels around the edge */
+
+    .days {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+    }
+
+    .day {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      margin: -10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #444;
+      /* base radius from center: 230px, adjust to sit right on the outer ring */
+      transform-origin: 0 0;
+    }
+
+    /* We’ll manually rotate each day (31 total).
+       Each step is 360/31 ≈ 11.61 degrees.
+       You can tweak the translateX distance to move labels in/out. */
+
+    .day.d1  { transform: rotate(  -90deg) translateX(230px) rotate( 90deg); }
+    .day.d2  { transform: rotate( -78.4deg) translateX(230px) rotate( 78.4deg); }
+    .day.d3  { transform: rotate( -66.8deg) translateX(230px) rotate( 66.8deg); }
+    .day.d4  { transform: rotate( -55.2deg) translateX(230px) rotate( 55.2deg); }
+    .day.d5  { transform: rotate( -43.6deg) translateX(230px) rotate( 43.6deg); }
+    .day.d6  { transform: rotate( -32.0deg) translateX(230px) rotate( 32.0deg); }
+    .day.d7  { transform: rotate( -20.4deg) translateX(230px) rotate( 20.4deg); }
+    .day.d8  { transform: rotate(  -8.8deg) translateX(230px) rotate(  8.8deg); }
+    .day.d9  { transform: rotate(   2.8deg) translateX(230px) rotate( -2.8deg); }
+    .day.d10 { transform: rotate(  14.4deg) translateX(230px) rotate(-14.4deg); }
+    .day.d11 { transform: rotate(  26.0deg) translateX(230px) rotate(-26.0deg); }
+    .day.d12 { transform: rotate(  37.6deg) translateX(230px) rotate(-37.6deg); }
+    .day.d13 { transform: rotate(  49.2deg) translateX(230px) rotate(-49.2deg); }
+    .day.d14 { transform: rotate(  60.8deg) translateX(230px) rotate(-60.8deg); }
+    .day.d15 { transform: rotate(  72.4deg) translateX(230px) rotate(-72.4deg); }
+    .day.d16 { transform: rotate(  84.0deg) translateX(230px) rotate(-84.0deg); }
+    .day.d17 { transform: rotate(  95.6deg) translateX(230px) rotate(-95.6deg); }
+    .day.d18 { transform: rotate( 107.2deg) translateX(230px) rotate(-107.2deg); }
+    .day.d19 { transform: rotate( 118.8deg) translateX(230px) rotate(-118.8deg); }
+    .day.d20 { transform: rotate( 130.4deg) translateX(230px) rotate(-130.4deg); }
+    .day.d21 { transform: rotate( 142.0deg) translateX(230px) rotate(-142.0deg); }
+    .day.d22 { transform: rotate( 153.6deg) translateX(230px) rotate(-153.6deg); }
+    .day.d23 { transform: rotate( 165.2deg) translateX(230px) rotate(-165.2deg); }
+    .day.d24 { transform: rotate( 176.8deg) translateX(230px) rotate(-176.8deg); }
+    .day.d25 { transform: rotate( 188.4deg) translateX(230px) rotate(-188.4deg); }
+    .day.d26 { transform: rotate( 200.0deg) translateX(230px) rotate(-200.0deg); }
+    .day.d27 { transform: rotate( 211.6deg) translateX(230px) rotate(-211.6deg); }
+    .day.d28 { transform: rotate( 223.2deg) translateX(230px) rotate(-223.2deg); }
+    .day.d29 { transform: rotate( 234.8deg) translateX(230px) rotate(-234.8deg); }
+    .day.d30 { transform: rotate( 246.4deg) translateX(230px) rotate(-246.4deg); }
+    .day.d31 { transform: rotate( 258.0deg) translateX(230px) rotate(-258.0deg); }
+
+    /* habit labels (optional – around the side) */
+
+    .habit-labels {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
+  <div class="tracker-wrapper">
+    <div class="tracker-title">Monthly Circle Habit Tracker</div>
 
-<h1>My Certifications</h1>
-<div class="grid-container">
-  <div>
-    <img class='grid-item grid-item-1' src='src/img/ClientPro.png' alt=''>
-    <p>"Windows Client Pro <br> I gained the ability to manage Windows, identity and security, networking, and files and storage."</p>
+    <div class="habit-tracker">
+      <!-- concentric rings (one per habit or layer) -->
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="ring r4"></div>
+      <div class="ring r5"></div>
+      <div class="ring r6"></div>
+
+      <!-- center text -->
+      <div class="center-content">
+        <div class="center-title">January</div>
+        <div class="center-subtitle">Habits</div>
+      </div>
+
+      <!-- days around the circle -->
+      <div class="days">
+        <div class="day d1">1</div>
+        <div class="day d2">2</div>
+        <div class="day d3">3</div>
+        <div class="day d4">4</div>
+        <div class="day d5">5</div>
+        <div class="day d6">6</div>
+        <div class="day d7">7</div>
+        <div class="day d8">8</div>
+        <div class="day d9">9</div>
+        <div class="day d10">10</div>
+        <div class="day d11">11</div>
+        <div class="day d12">12</div>
+        <div class="day d13">13</div>
+        <div class="day d14">14</div>
+        <div class="day d15">15</div>
+        <div class="day d16">16</div>
+        <div class="day d17">17</div>
+        <div class="day d18">18</div>
+        <div class="day d19">19</div>
+        <div class="day d20">20</div>
+        <div class="day d21">21</div>
+        <div class="day d22">22</div>
+        <div class="day d23">23</div>
+        <div class="day d24">24</div>
+        <div class="day d25">25</div>
+        <div class="day d26">26</div>
+        <div class="day d27">27</div>
+        <div class="day d28">28</div>
+        <div class="day d29">29</div>
+        <div class="day d30">30</div>
+        <div class="day d31">31</div>
+      </div>
+    </div>
+
+    <!-- labels for what each ring means -->
+    <div class="habit-labels">
+      <div>Ring 1: Exercise</div>
+      <div>Ring 2: Water</div>
+      <div>Ring 3: Reading</div>
+      <div>Ring 4: Meditation</div>
+      <div>Ring 5: Sleep</div>
+      <div>Ring 6: Custom</div>
+    </div>
   </div>
-  <div>
-    <img class='grid-item grid-item-2' src='src/img/Cyber Defense Pro.png' alt=''>
-    <p> "Cyber Defense Pro <br> I gained the ability to monitor and analyze logs, conduct threat analysis and detection, perform risk analysis and mitigation, respond to incidents, and ensure audit and compliance."</p> 
-  </div>
-  <div>
-    <img class='grid-item grid-item-3' src='src/img/PC Pro.png' alt=''>
-    <p>"PC Pro <br> I gained the skills to install, repair, configure, secure, and manage computer hardware, operating systems, and software in home or corporate environments."</p>
-  </div>
-  <div>
-    <img class='grid-item grid-item-4' src='src/img/Linux Pro.png' alt=''>
-    <p>"Linux Pro"</p>
-  </div>
-  
-</div>
-    
 </body>
-    
 </html>
