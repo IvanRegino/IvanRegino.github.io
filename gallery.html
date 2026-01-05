@@ -1,163 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Monthly To-Do List & Habit Tracker</title>
-<body>
-
-  <div class="habit-page">
-  <div class="habit-header">
-    <div class="habit-header-title">Monthly To-Do List &amp; Habit Tracker</div>
-    <div class="habit-header-month">
-      <label for="habit-month">Month of:</label>
-      <input id="habit-month" type="text" placeholder="January 2026" />
-    </div>
+<div class="planner">
+  <div class="planner-tabs">
+    <button data-tab="year">Yearly Goals</button>
+    <button data-tab="month">Monthly Goals</button>
+    <button data-tab="week" class="active">Weekly Goals</button>
   </div>
 
-  <div class="habit-layout">
-    <!-- Habit names on the left -->
-    <div class="habit-left">
-      <div class="habit-list-title">Habits</div>
-      <div class="habit-list">
-        <input type="text" placeholder="Habit 1" />
-        <input type="text" placeholder="Habit 2" />
-        <input type="text" placeholder="Habit 3" />
-        <input type="text" placeholder="Habit 4" />
-        <input type="text" placeholder="Habit 5" />
-        <input type="text" placeholder="Habit 6" />
-        <input type="text" placeholder="Habit 7" />
-        <input type="text" placeholder="Habit 8" />
-        <input type="text" placeholder="Habit 9" />
-        <input type="text" placeholder="Habit 10" />
-      </div>
-    </div>
+  <!-- YEARLY -->
+  <div class="planner-section" id="year">
+    <h2>Yearly Goals</h2>
+    <div class="goal-list" id="yearGoals"></div>
+    <button class="add-goal" data-target="yearGoals">+ Add Yearly Goal</button>
+  </div>
 
-    <!-- Grid on the right -->
-    <div class="habit-grid-wrapper">
-      <table class="habit-grid">
-        <thead>
-          <tr>
-            <th class="habit-corner"></th>
-            <th class="habit-day-label">1</th>
-            <th class="habit-day-label">2</th>
-            <th class="habit-day-label">3</th>
-            <th class="habit-day-label">4</th>
-            <th class="habit-day-label">5</th>
-            <th class="habit-day-label">6</th>
-            <th class="habit-day-label">7</th>
-            <th class="habit-day-label">8</th>
-            <th class="habit-day-label">9</th>
-            <th class="habit-day-label">10</th>
-            <th class="habit-day-label">11</th>
-            <th class="habit-day-label">12</th>
-            <th class="habit-day-label">13</th>
-            <th class="habit-day-label">14</th>
-            <th class="habit-day-label">15</th>
-            <th class="habit-day-label">16</th>
-            <th class="habit-day-label">17</th>
-            <th class="habit-day-label">18</th>
-            <th class="habit-day-label">19</th>
-            <th class="habit-day-label">20</th>
-            <th class="habit-day-label">21</th>
-            <th class="habit-day-label">22</th>
-            <th class="habit-day-label">23</th>
-            <th class="habit-day-label">24</th>
-            <th class="habit-day-label">25</th>
-            <th class="habit-day-label">26</th>
-            <th class="habit-day-label">27</th>
-            <th class="habit-day-label">28</th>
-            <th class="habit-day-label">29</th>
-            <th class="habit-day-label">30</th>
-            <th class="habit-day-label">31</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- 10 rows for 10 habits -->
-          <!-- Row 1 -->
-          <tr>
-            <th class="habit-row-label">1</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <!-- Row 2 -->
-          <tr>
-            <th class="habit-row-label">2</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <!-- Row 3 -->
-          <tr>
-            <th class="habit-row-label">3</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <!-- Row 4 -->
-          <tr>
-            <th class="habit-row-label">4</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <!-- Row 5 -->
-          <tr>
-            <th class="habit-row-label">5</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <!-- Row 6 -->
-          <tr>
-            <th class="habit-row-label">6</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <!-- Row 7 -->
-          <tr>
-            <th class="habit-row-label">7</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <!-- Row 8 -->
-          <tr>
-            <th class="habit-row-label">8</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <!-- Row 9 -->
-          <tr>
-            <th class="habit-row-label">9</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <!-- Row 10 -->
-          <tr>
-            <th class="habit-row-label">10</th>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- MONTHLY -->
+  <div class="planner-section" id="month">
+    <h2>Monthly Goals</h2>
+    <div class="goal-list" id="monthGoals"></div>
+    <button class="add-goal" data-target="monthGoals">+ Add Monthly Goal</button>
+  </div>
+
+  <!-- WEEKLY -->
+  <div class="planner-section active" id="week">
+    <h2>Weekly Goals</h2>
+
+    <h3>Shop</h3>
+    <p class="weekly-main-goal">
+      The main goal of the week for Ivan is to finish hard inventory in two days.
+    </p>
+
+    <h3>Monday 5th</h3>
+    <div class="goal-list" id="weekGoals"></div>
+    <button class="add-goal" data-target="weekGoals">+ Add Weekly Task</button>
   </div>
 </div>
-
-</body>
-</html>
