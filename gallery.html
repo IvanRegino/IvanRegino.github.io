@@ -3,119 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diamond Grid Banner Preview</title>
-<style>
+<title>Diamond Grid Gallery</title>
 
-/* Reset */
-* {
+<style>
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  width: 100%;
-  height: 100%;
-}
-
-/* Container sized for Etsy Big Banner */
-.banner {
-  width: 1200px;
-  height: 300px;
-  display: flex;
+  font-family: Arial, sans-serif;
   background: #fff;
-  overflow: hidden;
 }
 
-/* Left: Logo */
-.logo {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fafafa;
-}
-.logo img {
-  max-width: 70%;
-  max-height: 70%;
-}
-
-/* Right: Diamond Grid */
+/* Diamond grid container */
 .grid {
-  flex: 2.5;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-/* Diamond mosaic wrapper */
-.diamond-wrapper {
-  transform: rotate(-45deg);
   display: flex;
   flex-wrap: wrap;
-  width: 900px; /* total grid width */
-  gap: 5px;
   justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  transform: rotate(-45deg);
 }
 
-/* Each cell rotated back */
+/* Each diamond cell */
 .diamond {
-  width: 100px;
-  height: 100px;
-  transform: rotate(45deg);
+  width: 150px;
+  height: 150px;
   overflow: hidden;
+  transform: rotate(45deg);
   position: relative;
-  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
 .diamond img {
-  position: absolute;
-  top: -25%;
-  left: -25%;
   width: 150%;
   height: 150%;
   object-fit: cover;
-  transition: transform .3s ease;
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  transition: transform 0.3s ease;
 }
+
 .diamond:hover img {
   transform: scale(1.1);
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="banner">
-
-  <!-- LOGO -->
-  <div class="logo">
-    <img src="logo.png" alt="Your Logo">
-  </div>
-
-  <!-- DIAMOND GRID -->
-  <div class="grid">
-    <div class="diamond-wrapper">
-
-      <div class="diamond"><img src="src/img/tech-support.png" alt=""></div>
-      <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
-      <div class="diamond"><img src="src/img/tech-support.png" alt=""></div>
-      <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
-
-      <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
-      <div class="diamond"><img src="src/img/tech-support.png" alt=""></div>
-      <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
-      <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
-
-      <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
-      <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
-      <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
-      <div class="diamond"><img src="src/img/tech-support.png" alt=""></div>
-
-    </div>
-  </div>
-
+<div class="grid">
+  <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
+  <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
+  <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
+  <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
+  <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
+  <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
+  <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
+  <div class="diamond"><img src="src/img/felipe.jpg" alt=""></div>
 </div>
 
 </body>
