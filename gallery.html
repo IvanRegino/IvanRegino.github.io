@@ -5,6 +5,10 @@
 <title>Modern Etsy Banner</title>
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     padding: 40px;
@@ -15,38 +19,39 @@
   }
 
   .banner {
-    width: 1400px;
-    height: 400px;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 360px;
     background: #fafafa;
     border-radius: 24px;
-    position: relative;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   }
 
-  /* --- HERO TEXT --- */
+  /* HERO TEXT */
   .hero {
     position: absolute;
     left: 40px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    max-width: 320px;
   }
 
   .hero h1 {
-    font-size: 48px;
+    font-size: 40px;
     margin: 0;
     font-weight: 700;
   }
 
   .hero p {
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 18px;
     color: #444;
   }
 
-  /* --- SHAPES --- */
-
+  /* GENERIC SHAPE BASE */
   .shape {
     position: absolute;
     overflow: hidden;
@@ -59,43 +64,42 @@
     object-fit: cover;
   }
 
-  /* Diamond shape */
+  /* DIAMOND */
   .diamond {
     width: 260px;
     height: 260px;
-    top: 70px;
-    left: 500px;
+    top: 50px;
+    left: 420px;
     transform: rotate(45deg);
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   }
 
-  /* Circle */
+  /* CIRCLE */
   .circle {
     width: 220px;
     height: 220px;
-    top: 100px;
-    left: 800px;
+    top: 80px;
+    left: 700px;
     border-radius: 50%;
   }
 
-  /* Semi-circle */
+  /* SEMI-CIRCLE */
   .semi {
-    width: 300px;
-    height: 150px;
+    width: 280px;
+    height: 140px;
     bottom: 20px;
-    left: 600px;
-    border-radius: 300px 300px 0 0;
+    left: 540px;
+    border-radius: 280px 280px 0 0;
     clip-path: ellipse(50% 100% at 50% 100%);
   }
 
-  /* Soft gradient overlay for blending */
+  /* SOFT GRADIENT FADE */
   .fade {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, #fafafa 0%, transparent 30%, transparent 70%, #fafafa 100%);
+    background: linear-gradient(to right, #fafafa 0%, transparent 25%, transparent 75%, #fafafa 100%);
     pointer-events: none;
   }
-
 </style>
 </head>
 
@@ -104,28 +108,26 @@
 <div class="banner">
 
   <div class="hero">
-    <h1>Felipe & Grace Stone</h1>
+    <h1>Felipe &amp; Grace Stone</h1>
     <p>Handcrafted Stone Jewelry • Made With Intention</p>
   </div>
 
   <!-- Diamond -->
   <div class="shape diamond">
-    <img src="https://via.placeholder.com/600x600" alt="">
+    <img src="https://via.placeholder.com/800x800/ffb6c1/000000?text=Diamond" alt="Diamond image">
   </div>
 
   <!-- Circle -->
   <div class="shape circle">
-    <img src="https://via.placeholder.com/600x600" alt="">
+    <img src="https://via.placeholder.com/800x800/c1e1ff/000000?text=Circle" alt="Circle image">
   </div>
 
   <!-- Semi-circle -->
   <div class="shape semi">
-    <img src="https://via.placeholder.com/600x600" alt="">
+    <img src="https://via.placeholder.com/800x800/d1ffd1/000000?text=Semi" alt="Semi-circle image">
   </div>
 
-  <!-- Soft blending overlay -->
   <div class="fade"></div>
-
 </div>
 
 </body>
