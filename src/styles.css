@@ -309,6 +309,43 @@ footer {
   transform: translate(-50%, -50%);
 }
 
+
+
+.banner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 30px;
+  background: #fafafa;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 120px;
+  gap: 12px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.tall { grid-row: span 2; grid-column: span 2; }
+.wide { grid-column: span 3; }
+.square { grid-column: span 2; }
+
+
 /* Basic responsiveness */
 @media (max-width: 800px) {
   .habit-layout {
@@ -320,6 +357,7 @@ footer {
 
 
 }
+
 
 
 
