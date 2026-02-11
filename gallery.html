@@ -7,16 +7,17 @@
 <style>
   body {
     margin: 0;
-    padding: 0;
+    padding: 40px;
     background: #e9e7e4;
     font-family: "Helvetica Neue", Arial, sans-serif;
     display: flex;
     justify-content: center;
   }
 
+  /* --- BANNER CONTAINER --- */
   .banner {
-    width: 1400px; /* Etsy recommended ratio */
-    height: 350px;
+    width: 1400px;          /* Etsy-friendly ratio */
+    height: 400px;          /* Fixed height so grid stays stable */
     background: #fafafa;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -24,8 +25,10 @@
     padding: 30px;
     box-sizing: border-box;
     border-radius: 20px;
+    overflow: hidden;       /* Prevents images from spilling out */
   }
 
+  /* --- HERO TEXT AREA --- */
   .hero {
     display: flex;
     flex-direction: column;
@@ -46,11 +49,13 @@
     color: #555;
   }
 
+  /* --- COLLAGE GRID --- */
   .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 110px;
+    grid-template-rows: repeat(3, 1fr); /* FIXED rows so layout is stable */
     gap: 12px;
+    height: 100%;
   }
 
   .grid img {
@@ -61,8 +66,8 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   }
 
-  .tall { grid-row: span 2; grid-column: span 2; }
-  .wide { grid-column: span 3; }
+  .tall { grid-row: span 3; grid-column: span 2; }
+  .wide { grid-column: span 4; }
   .square { grid-column: span 2; }
 </style>
 
