@@ -51,4 +51,77 @@
 .diamond-grid {
     display: grid;
     grid-template-columns: repeat(4, 120px);
-    grid-auto-rows: 120p
+    grid-auto-rows: 120px;
+    gap: 20px;
+    transform: rotate(45deg);
+}
+
+/* EACH DIAMOND */
+.diamond {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+}
+
+/* IMAGE INSIDE DIAMOND */
+.diamond img {
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    transform: rotate(-45deg);
+    transition: transform 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.diamond:hover img {
+    transform: rotate(-45deg) scale(1.1);
+}
+
+/* OPTIONAL: Make center diamond bigger */
+.diamond.large {
+    width: 160px;
+    height: 160px;
+}
+
+.diamond.large img {
+    width: 160%;
+    height: 160%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="banner">
+
+    <!-- LEFT LOGO -->
+    <div class="logo-section">
+        <img src="logo.jpg" alt="Shop Logo">
+    </div>
+
+    <!-- RIGHT DIAMOND COLLAGE -->
+    <div class="collage-section">
+        <div class="diamond-grid">
+
+            <div class="diamond"><img src="img1.jpg" alt=""></div>
+            <div class="diamond"><img src="img2.jpg" alt=""></div>
+            <div class="diamond large"><img src="img3.jpg" alt=""></div>
+            <div class="diamond"><img src="img4.jpg" alt=""></div>
+
+            <div class="diamond"><img src="img5.jpg" alt=""></div>
+            <div class="diamond"><img src="img6.jpg" alt=""></div>
+            <div class="diamond"><img src="img7.jpg" alt=""></div>
+            <div class="diamond"><img src="img8.jpg" alt=""></div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
