@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Etsy Banner</title>
+<title>Modern Etsy Banner</title>
 
 <style>
 
@@ -14,110 +14,41 @@
     box-sizing: border-box;
 }
 
-/* BANNER CONTAINER */
+/* MAIN BANNER */
 .banner {
+    width: 1200px;       /* Etsy Big Banner */
+    height: 300px;
     display: flex;
-    width: 100%;
-    height: 250px; /* Adjust height if needed */
     overflow: hidden;
     font-family: Arial, sans-serif;
+    background: #ffffff;
 }
 
 /* LEFT LOGO SECTION */
-.banner-left {
-    flex: 1;
-    background: #f4f4f4; /* Change background color if desired */
+.logo-section {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f7f7f7; /* Change to brand color */
+}
+
+.logo-section img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+/* RIGHT COLLAGE SECTION */
+.collage-section {
+    width: 65%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.banner-left img {
-    max-width: 80%;
-    max-height: 80%;
-}
-
-/* MIDDLE & RIGHT COLLAGE SECTIONS */
-.banner-middle,
-.banner-right {
-    flex: 2;
-    position: relative;
-    overflow: hidden;
-}
-
-/* SIDE IMAGES */
-.side-img {
-    position: absolute;
-    width: 60%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.9;
-}
-
-/* Left fade */
-.left-img {
-    left: 0;
-    mask-image: linear-gradient(to right, black 65%, transparent);
-    -webkit-mask-image: linear-gradient(to right, black 65%, transparent);
-}
-
-/* Right fade */
-.right-img {
-    right: 0;
-    mask-image: linear-gradient(to left, black 65%, transparent);
-    -webkit-mask-image: linear-gradient(to left, black 65%, transparent);
-}
-
-/* DIAMOND CENTER IMAGE */
-.diamond {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150px;   /* Change diamond size here */
-    height: 150px;
-    transform: translate(-50%, -50%) rotate(45deg);
-    overflow: hidden;
-    z-index: 2;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Soft shadow */
-}
-
-.diamond img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: rotate(-45deg) scale(1.4);
-}
-
-</style>
-</head>
-<body>
-
-<div class="banner">
-
-    <!-- LEFT: LOGO -->
-    <div class="banner-left">
-        <img src="logo.jpg" alt="Shop Logo">
-    </div>
-
-    <!-- MIDDLE COLLAGE -->
-    <div class="banner-middle">
-        <img class="side-img left-img" src="left1.jpg" alt="">
-        <img class="side-img right-img" src="right1.jpg" alt="">
-        <div class="diamond">
-            <img src="center.jpg" alt="">
-        </div>
-    </div>
-
-    <!-- RIGHT COLLAGE -->
-    <div class="banner-right">
-        <img class="side-img left-img" src="left2.jpg" alt="">
-        <img class="side-img right-img" src="right2.jpg" alt="">
-        <div class="diamond">
-            <img src="center2.jpg" alt="">
-        </div>
-    </div>
-
-</div>
-
-</body>
-</html>
+/* DIAMOND GRID CONTAINER */
+.diamond-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-auto-rows: 120p
