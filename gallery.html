@@ -1,41 +1,143 @@
-<!-- FELIPE & GRACE BANNER -->
-<section class="fg-banner">
-  <!-- Left third: image panel (you'll use your own image here) -->
-  <div class="fg-banner-left">
-    <img src="https://via.placeholder.com/800x600/ddd/000?text=Felipe+%26+Grace+Image"
-         alt="Felipe and Grace" class="fg-left-image">
-  </div>
+<div id="fg-banner-root"></div>
 
-  <!-- Right two-thirds: diamond collage with 5 images -->
-  <div class="fg-banner-right">
-    <div class="fg-collage">
+<script>
+  const root = document.querySelector("#fg-banner-root");
+  const shadow = root.attachShadow({ mode: "open" });
 
-      <!-- Center diamond -->
-      <div class="fg-photo fg-diamond">
-        <img src="https://via.placeholder.com/800x800/ffb6c1/000?text=Center" alt="">
+  shadow.innerHTML = `
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .banner {
+        width: 100%;
+        max-width: 1400px;
+        height: 360px;
+        margin: 40px auto;
+        background: #fafafa;
+        border-radius: 24px;
+        overflow: hidden;
+        display: flex;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      /* LEFT THIRD */
+      .left {
+        flex: 0 0 33.333%;
+        position: relative;
+      }
+
+      .left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* RIGHT TWO-THIRDS */
+      .right {
+        flex: 0 0 66.666%;
+        position: relative;
+      }
+
+      .collage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .photo {
+        position: absolute;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* CENTER DIAMOND */
+      .diamond {
+        width: 260px;
+        height: 260px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+
+      /* LEFT TOP */
+      .left-top {
+        width: 180px;
+        height: 180px;
+        top: 10%;
+        left: 10%;
+        border-radius: 50%;
+      }
+
+      /* LEFT BOTTOM */
+      .left-bottom {
+        width: 200px;
+        height: 140px;
+        bottom: 10%;
+        left: 8%;
+        border-radius: 200px 200px 0 0;
+        clip-path: ellipse(50% 100% at 50% 100%);
+      }
+
+      /* RIGHT TOP */
+      .right-top {
+        width: 200px;
+        height: 150px;
+        top: 10%;
+        right: 10%;
+        border-radius: 24px;
+      }
+
+      /* RIGHT BOTTOM */
+      .right-bottom {
+        width: 180px;
+        height: 180px;
+        bottom: 10%;
+        right: 18%;
+        border-radius: 50%;
+      }
+    </style>
+
+    <div class="banner">
+      <div class="left">
+        <img src="https://via.placeholder.com/800x600/ddd/000?text=Felipe+%26+Grace">
       </div>
 
-      <!-- Left top -->
-      <div class="fg-photo fg-left-top">
-        <img src="https://via.placeholder.com/800x800/c1e1ff/000?text=Left+Top" alt="">
-      </div>
+      <div class="right">
+        <div class="collage">
 
-      <!-- Left bottom -->
-      <div class="fg-photo fg-left-bottom">
-        <img src="https://via.placeholder.com/800x800/d1ffd1/000?text=Left+Bottom" alt="">
-      </div>
+          <div class="photo diamond">
+            <img src="https://via.placeholder.com/800x800/ffb6c1/000?text=Diamond">
+          </div>
 
-      <!-- Right top -->
-      <div class="fg-photo fg-right-top">
-        <img src="https://via.placeholder.com/800x800/fde2b8/000?text=Right+Top" alt="">
-      </div>
+          <div class="photo left-top">
+            <img src="https://via.placeholder.com/800x800/c1e1ff/000?text=Left+Top">
+          </div>
 
-      <!-- Right bottom -->
-      <div class="fg-photo fg-right-bottom">
-        <img src="https://via.placeholder.com/800x800/e0c8ff/000?text=Right+Bottom" alt="">
-      </div>
+          <div class="photo left-bottom">
+            <img src="https://via.placeholder.com/800x800/d1ffd1/000?text=Left+Bottom">
+          </div>
 
+          <div class="photo right-top">
+            <img src="https://via.placeholder.com/800x800/fde2b8/000?text=Right+Top">
+          </div>
+
+          <div class="photo right-bottom">
+            <img src="https://via.placeholder.com/800x800/e0c8ff/000?text=Right+Bottom">
+          </div>
+
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<!-- END FELIPE & GRACE BANNER -->
+  `;
+</script>
